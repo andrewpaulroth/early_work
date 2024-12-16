@@ -1,0 +1,18 @@
+player_guesses = 0
+import random
+computer_choice = random.randint(1, 100)
+print("I'm thinking of a random number, somewhere between 1 and 100... you have ten guesses!")
+while True:
+  player_choice = int(input("Guess my number: "))
+  if (player_choice == computer_choice) and (player_guesses < 10):
+    print(f"Congratulations! You guessed my number in {player_guesses}.")
+    break
+  elif (player_choice > computer_choice) and (player_guesses < 10):
+    print("Too high!")
+    player_guesses += 1
+  elif (player_choice < computer_choice) and (player_guesses < 10): 
+    print("Too low!")
+    player_guesses += 1
+  elif player_guesses == 10: 
+    print(f"You lose! The number was {computer_choice}")
+    break
